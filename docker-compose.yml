@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    network_mode: host
+    environment:
+      - POSTGRES_PASSWORD=test
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+    command: [ "postgres", "-c", "wal_level=logical" ]
+    restart: unless-stopped
+
+  cdc:
+    build:
+      context: .
+      dockerfile: cdc.Dockerfile
+    network_mode: host
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+volumes:
+  db-data:
