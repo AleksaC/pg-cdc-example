@@ -23,4 +23,6 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
 
+COPY . .
+
 CMD ["python", "stream_consumer.py"]

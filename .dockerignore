@@ -1,5 +1,4 @@
 *
 
-!*.Dockerfile
-!*.py
+!stream_consumer.py
 !requirements.txt
