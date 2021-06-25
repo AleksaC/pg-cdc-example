@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 import psycopg2
 
+from stream_consumer import get_db_connection_params
+
 
 def main():
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        dbname="test",
-        user="replication_role",
-        password="test",
-    )
+    conn = psycopg2.connect(**get_db_connection_params())
     cur = conn.cursor()
 
     cur.execute("INSERT INTO test (name) VALUES (%s)", ("john",))

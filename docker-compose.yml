@@ -7,7 +7,7 @@ services:
       dockerfile: db.Dockerfile
     init: true
     # network mode is set to host in order to avoid the hassle of editing pg_hba.conf
-    # to allow replication connections
+    # to allow replication connections from other hosts
     network_mode: host
     environment:
       - POSTGRES_PASSWORD=test
