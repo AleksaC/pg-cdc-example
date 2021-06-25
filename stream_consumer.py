@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Based on https://www.psycopg.org/docs/advanced.html?#logical-replication-quick-start
 import json
 import time
 from pprint import pprint
