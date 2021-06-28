@@ -1,4 +1,4 @@
-# pg-cdc-test
+# pg-cdc-example
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -51,7 +51,7 @@ a replication stream consumer and perform an insert into the test database:
 
 ```shell
 docker-compose up
-./test_consumer.py
+docker-compose exec cdc python test_consumer.py
 ```
 
 ## Contact
