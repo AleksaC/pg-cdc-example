@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Simple example testing usage of postgres [streaming replication](https://www.postgresql.org/docs/9.5/protocol-replication.html) for cdc.
+Simple example testing usage of postgres [streaming replication](https://www.postgresql.org/docs/current/protocol-replication.html) for cdc.
 
 ## Motivation
 
